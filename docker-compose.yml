@@ -1,0 +1,11 @@
+services:
+  foundationdb:
+    image: foundationdb/foundationdb:7.3.62
+    ports:
+      - "4500:4500"
+    environment:
+      - FDB_CLUSTER_FILE=/var/fdb/fdb.cluster
+    volumes:
+      - fdb_data:/var/fdb
+volumes:
+  fdb_data:
